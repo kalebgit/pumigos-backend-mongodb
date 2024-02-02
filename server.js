@@ -1,4 +1,5 @@
 const express = require("express")
+const mongoose = require("mongoose")
 const {createServer} = require("http")
 const {Server} = require("socket.io")
 const userRoute = require("./routes/users")
@@ -24,6 +25,13 @@ app.use((req, res, next)=>{
 
 
 server.listen(PORT, ()=>{
+    mongoose.connect("mongodb+srv://emilianokaleb:Mongokaleb2005@proyectocoder.bmy8cw1.mongodb.net/test?retryWrites=true&w=majority")
+        .then(()=>{
+            console.log("connected to the database")
+        })
+        .catch((err)=>{
+            console.log("there was an error: " + err);
+        })
 
 })
 
