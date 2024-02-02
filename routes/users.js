@@ -7,17 +7,14 @@ const userRouter = Router();
 
 
 
-userRouter.get('/', (req, res, next)=>{
 
-})
 
 userRouter.get('/:id', (req, res, next)=>{
     const {id} = req.params;
-    if(id){
-        
-        
-    }else{
-
+    try{
+        res.sendStatus(200).send(User.get(id));
+    }catch(err){
+        res.sendStatus(err.code).send(err.message);
     }
 })
 

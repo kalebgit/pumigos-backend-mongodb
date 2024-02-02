@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const {get} = require("../util/httpFunctions")
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -40,9 +41,7 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-userSchema.methods.sayHi = function(){
-    
-}
+userSchema.statics.get = get
 
 const userModel = mongoose.model("User", userSchema);
 
