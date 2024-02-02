@@ -14,7 +14,7 @@ userRouter.get('/', (req, res, next)=>{
 userRouter.get('/:id', (req, res, next)=>{
     const {id} = req.params;
     if(id){
-        const user = 
+        
         
     }else{
 
